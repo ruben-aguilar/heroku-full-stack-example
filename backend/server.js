@@ -16,8 +16,7 @@ const express = require('express')
 const app = express()
 
 // Heroku will populate the PORT environment too
-// const port = process.env.PORT;
-const port = 80;
+const port = process.env.PORT;
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
