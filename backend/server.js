@@ -13,15 +13,18 @@ const express = require('express')
 
 // client.connect();
 
-const app = express()
-app.use(express.static('public'));
-
-// Heroku will populate the PORT environment too
-const port = process.env.PORT;
+const app = express();
 
 app.get('/api/message', (req, res) => {
     res.send('Hello World!')
 })
+
+
+app.use(express.static("public"))
+
+// Heroku will populate the PORT environment too
+
+
 
 // app.get('/message', (req, res) => {
 //     client.query('SELECT * from Messages', (err, messages) => {
@@ -30,7 +33,7 @@ app.get('/api/message', (req, res) => {
 // })
 
 
-
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
