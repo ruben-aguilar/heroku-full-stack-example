@@ -22,9 +22,9 @@ const app = express();
 // })
 
 
-console.log(`Serving data from ${path.join(__dirname, 'public')}`)
+console.log(`Serving data from ${path.join(__dirname, 'build')}`)
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 
 
