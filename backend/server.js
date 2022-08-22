@@ -21,6 +21,8 @@ const app = express();
 // })
 
 
+console.log(`Serving data from ${path.join(__dirname, 'public')}`)
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Heroku will populate the PORT environment too
