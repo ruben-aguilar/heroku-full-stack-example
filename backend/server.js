@@ -17,16 +17,14 @@ const path = require('path')
 const app = express();
 
 
-// app.get('/api/message', (req, res) => {
-//     res.send('Hello World!')
-// })
+app.get('/api/message', (req, res) => {
+    res.send('This is a message coming from the DB')
+})
 
 
 console.log(`Serving data from ${path.join(__dirname, 'build')}`)
 
 app.use(express.static(path.join(__dirname, 'build')))
-
-
 
 
 
