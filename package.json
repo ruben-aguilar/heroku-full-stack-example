@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./backend/server.js",
+    "build:frontend": "cd frontend && npm install && npm run build && cp -r ./public ../backend/public && cd .."
   },
   "keywords": [],
   "author": "",
