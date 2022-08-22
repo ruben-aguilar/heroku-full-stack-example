@@ -14,11 +14,12 @@ const express = require('express')
 // client.connect();
 
 const app = express()
+app.use(express.static('public'));
 
 // Heroku will populate the PORT environment too
 const port = process.env.PORT;
 
-app.get('/', (req, res) => {
+app.get('/api/message', (req, res) => {
     res.send('Hello World!')
 })
 
