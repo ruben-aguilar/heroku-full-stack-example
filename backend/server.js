@@ -15,12 +15,12 @@ const express = require('express')
 
 const app = express();
 
-app.get('/api/message', (req, res) => {
-    res.send('Hello World!')
-})
+// app.get('/api/message', (req, res) => {
+//     res.send('Hello World!')
+// })
 
 
-app.use(express.static("public"))
+app.use(express.static("backend/public"))
 
 // Heroku will populate the PORT environment too
 
