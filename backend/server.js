@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 // Heroku will populate the PORT environment too
-const port = 3000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
