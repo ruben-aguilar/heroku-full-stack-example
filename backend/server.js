@@ -16,6 +16,10 @@ const path = require('path')
 
 const app = express();
 
+app.configure(function () {
+    app.use(express.static(path.join(__dirname, 'public')))
+})
+
 // app.get('/api/message', (req, res) => {
 //     res.send('Hello World!')
 // })
@@ -23,9 +27,7 @@ const app = express();
 
 console.log(`Serving data from ${path.join(__dirname, 'public')}`)
 
-app.use(express.static(path.join(__dirname, 'public')))
 
-// Heroku will populate the PORT environment too
 
 
 
@@ -36,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // })
 
 
+// Heroku will populate the PORT environment too
 const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
