@@ -12,7 +12,6 @@ const client = new Client({
     }
 });
 
-client.connect();
 
 client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
@@ -26,9 +25,12 @@ const app = express();
 
 
 app.get('/api/message', (req, res) => {
+    client.connect();
+
     client.query('SELECT * from messages', (err, messages) => {
         console.log(client);
         console.log('Messages', messages)
+        client.end()
         res.send(messages[0].message)
     })
 })
