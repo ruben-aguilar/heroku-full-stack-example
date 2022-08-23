@@ -13,13 +13,13 @@ const client = new Client({
 });
 
 
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-    if (err) throw err;
-    for (let row of res.rows) {
-        console.log(JSON.stringify(row));
-    }
-    client.end();
-});
+// client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+//     if (err) throw err;
+//     for (let row of res.rows) {
+//         console.log(JSON.stringify(row));
+//     }
+//     client.end();
+// });
 
 const app = express();
 
@@ -27,8 +27,9 @@ const app = express();
 app.get('/api/message', (req, res) => {
     client.connect();
 
+    console.log("res", res)
+
     client.query('SELECT * from messages', (err, messages) => {
-        console.log(client);
         console.log('Messages', messages)
         client.end()
         res.status(200).text(messages[0].message)
