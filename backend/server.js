@@ -31,7 +31,7 @@ app.get('/api/message', (req, res) => {
         console.log(client);
         console.log('Messages', messages)
         client.end()
-        res.send(messages[0].message)
+        res.status(200).text(messages[0].message)
     })
 })
 
