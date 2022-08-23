@@ -35,8 +35,6 @@ app.get('/api/message', (req, res) => {
 })
 
 
-console.log(`Serving data from ${path.join(__dirname, 'build')}`)
-
 app.use(express.static(path.join(__dirname, 'build')))
 
 
