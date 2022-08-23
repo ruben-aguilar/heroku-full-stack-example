@@ -28,9 +28,9 @@ app.get('/api/message', (req, res) => {
     client.connect();
 
     client.query('SELECT * from messages', (err, messages) => {
-        console.log('Messages', messages)
-        client.end()
+        console.log('Result messages', messages)
         res.send(messages.rows[0].message)
+        client.end()
     })
 })
 
