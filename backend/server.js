@@ -27,8 +27,6 @@ const app = express();
 app.get('/api/message', (req, res) => {
     client.connect();
 
-    console.log("res", res)
-
     client.query('SELECT * from messages', (err, messages) => {
         console.log('Messages', messages)
         client.end()
