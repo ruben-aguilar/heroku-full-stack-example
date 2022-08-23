@@ -12,7 +12,7 @@ const client = new Client({
     }
 });
 
-// client.connect();
+client.connect();
 
 const app = express();
 
