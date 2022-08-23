@@ -32,7 +32,7 @@ app.get('/api/message', (req, res) => {
     client.query('SELECT * from messages', (err, messages) => {
         console.log('Messages', messages)
         client.end()
-        res.status(200).text(messages.rows[0].message)
+        res.send(messages.rows[0].message)
     })
 })
 
